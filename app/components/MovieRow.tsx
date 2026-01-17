@@ -30,7 +30,7 @@ export default function MovieRow({
   return (
     <div className="relative z-20 p-6 md:p-12 mb-4 ">
       <div className="flex gap-4 items-center">
-        <div className="w-1.5 h-8 bg-linear-to-r from-blue-500 to-purple-600 rounded-full" />
+        <div className="w-1 h-6 bg-linear-to-r from-blue-500 to-purple-600 rounded-full" />
         <h2 className="text-white text-lg md:text-2xl font-bold">{title}</h2>
       </div>
       <button
@@ -45,7 +45,7 @@ export default function MovieRow({
       >
         {movies.map((movie) => (
           <Link
-            href={`/movie/${movie.id}`}
+            href={`/${movie.media_type === "tv" ? "tv" : "movie"}/${movie.id}`}
             key={movie.id}
             className="flex flex-col shrink-0 group transition-all duration-300"
           >
@@ -64,7 +64,7 @@ export default function MovieRow({
                   </span>
                 </div>
               </div>
-              <div className="absolute inset-0 bg-linear-t from-black via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/90 via-[#0a0a0a]/30 to-transparent" />
             </div>
             <div className="w-40 md:w-50 pt-4">
               <h3 className="truncate text-gray-200 text-base md:text-lg transition-colors group-hover:text-white">

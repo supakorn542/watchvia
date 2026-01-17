@@ -27,9 +27,11 @@ export default function Navbar() {
           : "bg-linear-to-b from-black/80 to-transparent"
       }`}
     >
-      <h1 className="text-3xl font-extrabold tracking-tight bg-linear-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent hover:scale-105 cursor-pointer transition-transform">
-        WatchVia
-      </h1>
+      <Link href={`/`}>
+        <h1 className="text-3xl font-extrabold tracking-tight bg-linear-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent hover:scale-105 cursor-pointer transition-transform">
+          WatchVia
+        </h1>
+      </Link>
 
       <div className="flex gap-6">
         {["Home", "Movie", "TV Series", "Anime"].map((item, index) => (

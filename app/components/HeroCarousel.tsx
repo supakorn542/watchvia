@@ -9,12 +9,14 @@ import Image from "next/image";
 import { Movie } from "../types/tmdb";
 
 export default function HeroCarousel({ movies }: { movies: Movie[] }) {
-  console.log("movies: ", movies.slice(0, 5));
   return (
     <div className="relative w-full h-[85vh] md:h-[90vh]">
       <Carousel autoplay autoplaySpeed={5000} effect="fade" arrows>
-        {movies.slice(0, 5).map((item,index) => (
-          <div key={item.id} className="relative h-[85vh] md:h-[90vh] w-full focus:outline-none">
+        {movies.slice(0, 5).map((item, index) => (
+          <div
+            key={item.id}
+            className="relative h-[85vh] md:h-[90vh] w-full focus:outline-none"
+          >
             <Image
               src={BASE_IMG_URL_ORIGINAL + item.backdrop_path}
               alt={item.title || item.name || "Banner"}
@@ -44,7 +46,12 @@ export default function HeroCarousel({ movies }: { movies: Movie[] }) {
                   {item.overview}
                 </p>
               </div>
-              <Link href={`/movie/${item.id}`} className="w-fit">
+              <Link
+                href={`/${item.media_type === "tv" ? "tv" : "movie"}/${
+                  item.id
+                }`}
+                className="w-fit"
+              >
                 <button className="bg-white text-black px-4 md:px-8 py-2 md:py-3 rounded-full font-bold text-base md:text-lg flex items-center gap-3 hover:scale-105 transition-transform cursor-pointer">
                   <PlayCircleFilled className="text-xl" />
                   <span>เช็คช่องทางการรับชม</span>
