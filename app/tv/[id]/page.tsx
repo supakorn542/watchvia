@@ -15,7 +15,7 @@ import {
 import Link from "next/link";
 import MovieRow from "@/app/components/MovieRow";
 import CastRow from "@/app/components/CastRow";
-import { MovieDetail, ProviderItem } from "@/app/types/tmdb"; // ✅ Import Types
+import { MovieDetail, ProviderItem } from "@/app/types/tmdb";
 
 export default async function TvDetailPage({
   params,

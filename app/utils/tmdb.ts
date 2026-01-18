@@ -8,7 +8,7 @@ export const BASE_IMG_URL_ORIGINAL = "https://image.tmdb.org/t/p/original";
 
 export async function fetchTMDB(endpoint: string): Promise<TMDBResponse> {
   const separator = endpoint.includes("?") ? "&" : "?";
-  const url = `${BASE_URL}${endpoint}${separator}api_key=${API_KEY}&language=th-TH`;
+  const url = `${BASE_URL}${endpoint}${separator}api_key=${API_KEY}&language=th-TH&region=TH`;
 
   const res = await fetch(url);
 

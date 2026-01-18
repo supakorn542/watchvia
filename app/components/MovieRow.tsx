@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { StarFilled, LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Movie } from "../types/tmdb";
+import MovieCard from "./MovieCard";
 
 export default function MovieRow({
   title,
@@ -43,7 +44,7 @@ export default function MovieRow({
         ref={scrollRef}
         className="flex gap-5 overflow-x-auto z-20 pt-8 scrollbar-hide snap-x"
       >
-        {movies.map((movie) => (
+        {/* {movies.map((movie) => (
           <Link
             href={`/${movie.media_type === "tv" ? "tv" : "movie"}/${movie.id}`}
             key={movie.id}
@@ -76,6 +77,11 @@ export default function MovieRow({
               </p>
             </div>
           </Link>
+        ))} */}
+        {movies.map((movie) => (
+          <div key={movie.id} className="w-40 md:w-50 shrink-0 snap-start">
+            <MovieCard movie={movie} />
+          </div>
         ))}
       </div>
       <button
