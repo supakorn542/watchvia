@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { SearchOutlined } from "@ant-design/icons";
-import { fetchTMDB } from "../utils/tmdb";
 import { useRouter } from "next/navigation";
 
 export default function Navbar() {

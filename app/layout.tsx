@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 import { ConfigProvider, theme } from "antd";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
@@ -36,6 +37,7 @@ export default function RootLayout({
         <AntdRegistry>
           <Navbar />
           {children}
+          <Footer />
         </AntdRegistry>
       </body>
     </html>
