@@ -22,7 +22,7 @@ const lexendDeca = Lexend_Deca({
 
 export const metadata: Metadata = {
   title: "WatchVia",
-  description: "Legal Streaming Guide",
+  description: "Find your next favorite movie or TV show with WatchVia.",
 };
 
 export default function RootLayout({
@@ -41,4 +41,3 @@ export default function RootLayout({
     </html>
   );
 }
- 
